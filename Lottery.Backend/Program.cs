@@ -1,10 +1,16 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Lottery.Backend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 添加控制器服务
-builder.Services.AddControllers();
+// 添加控制器服务并配置 JSON 选项
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
 
 // 配置 SQLite 数据库
 builder.Services.AddDbContext<LotteryDbContext>(options =>

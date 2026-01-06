@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Lottery.Backend.Entities;
 
@@ -45,6 +46,7 @@ public class Participant
     /// <summary>
     /// 关联的活动
     /// </summary>
+    [JsonIgnore]
     [ForeignKey("ActivityId")]
     public Activity? Activity { get; set; }
 

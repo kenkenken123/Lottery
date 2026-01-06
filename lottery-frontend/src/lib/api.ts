@@ -1,5 +1,5 @@
 // API 基础配置和封装
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5176';
 
 // 通用错误处理
 interface ApiError {
