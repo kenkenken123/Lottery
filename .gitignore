@@ -1,0 +1,35 @@
+# .NET
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Next.js
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.pem
+
+# Environment variables
+.env*.local
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.vs/
+.vscode/
+*.swp
+*.swo
+*.swn
+.idea/
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
