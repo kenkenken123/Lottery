@@ -24,6 +24,11 @@ async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> 
     throw error;
   }
 
+  // Handle 204 No Content
+  if (response.status === 204) {
+    return {} as T;
+  }
+
   return response.json();
 }
 
