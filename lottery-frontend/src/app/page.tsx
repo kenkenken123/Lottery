@@ -95,18 +95,18 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
-      {/* 头部 - Glassmorphism */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-400 to-orange-400 font-sans">
+      {/* 头部 - Fun & Colorful */}
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b-4 border-white/50 shadow-xl">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/20">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+            <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-2xl shadow-purple-500/30 transform hover:scale-110 transition-transform">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
             </div>
-            <h1 className="text-xl font-bold text-slate-800 tracking-tight">企业抽奖管理系统</h1>
+            <h1 className="text-2xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent tracking-tight">🎉 企业抽奖管理系统</h1>
           </div>
-          <div className="text-sm font-medium text-slate-500">
-            Professional Lottery System
+          <div className="text-base font-black text-purple-600">
+            🎆 Lottery System
           </div>
         </div>
       </header>
@@ -116,87 +116,87 @@ export default function HomePage() {
         {/* 操作栏 */}
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-slate-800 mb-2">活动列表</h2>
-            <p className="text-slate-500 text-sm">管理您的所有抽奖活动，实时监控状态。</p>
+            <h2 className="text-4xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">🎪 活动列表</h2>
+            <p className="text-purple-600 text-base font-bold">管理您的所有抽奖活动，实时监控状态。</p>
           </div>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="group flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl hover:bg-teal-600 hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-300 font-medium"
+            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 shadow-2xl hover:shadow-purple-300/50 transition-all duration-300 font-black text-lg transform hover:scale-105"
           >
-            <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-            创建新活动
+            <svg className="w-6 h-6 group-hover:rotate-90 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg>
+            ✨ 创建新活动
           </button>
         </div>
 
         {/* 加载中 */}
         {loading && (
           <div className="flex flex-col items-center py-20">
-            <div className="w-12 h-12 rounded-full border-4 border-slate-200 border-t-teal-500 animate-spin" />
-            <p className="mt-4 text-slate-500 font-medium">加载数据中...</p>
+            <div className="w-16 h-16 rounded-full border-4 border-white/30 border-t-white animate-spin" />
+            <p className="mt-6 text-white font-bold text-lg drop-shadow-lg">🎉 加载数据中...</p>
           </div>
         )}
 
         {/* 空状态 */}
         {!loading && activities.length === 0 && (
-          <div className="bg-white rounded-2xl p-16 text-center border border-dashed border-slate-300">
-            <div className="w-20 h-20 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-20 text-center border-4 border-dashed border-white/50 shadow-2xl">
+            <div className="text-8xl mb-8 animate-bounce">
               🎲
             </div>
-            <h3 className="text-xl font-bold text-slate-800 mb-2">暂无活动</h3>
-            <p className="text-slate-500 mb-8 max-w-md mx-auto">还没有创建任何抽奖活动。点击右上角的按钮开始您的第一个活动吧！</p>
+            <h3 className="text-3xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">暂无活动</h3>
+            <p className="text-purple-600 font-bold mb-10 max-w-md mx-auto text-lg">还没有创建任何抽奖活动。点击右上角的按钮开始您的第一个活动吧！</p>
             <button
               onClick={() => setShowCreateModal(true)}
-              className="px-6 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-colors"
+              className="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 text-lg"
             >
-              立即创建
+              🚀 立即创建
             </button>
           </div>
         )}
 
         {/* 活动卡片列表 - Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity) => (
             <div
               key={activity.id}
-              className="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+              className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border-4 border-white/50 shadow-2xl hover:shadow-purple-300/50 hover:-translate-y-2 transition-all duration-300 group flex flex-col"
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl shadow-sm">
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400 text-white flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">
                   {activity.themeType === 'wheel' ? '🎡' : '🌐'}
                 </div>
                 {getStatusBadge(activity.status)}
               </div>
 
-              <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">{activity.name}</h3>
+              <h3 className="text-xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">{activity.name}</h3>
 
-              <p className="text-slate-500 text-sm mb-6 line-clamp-2 min-h-[2.5em]">
+              <p className="text-purple-600 text-sm font-bold mb-8 line-clamp-2 min-h-[2.5em]">
                 {activity.description || '暂无描述信息...'}
               </p>
 
               <div className="mt-auto">
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="px-2.5 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-500">
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl text-xs font-black text-purple-700">
                     {getThemeLabel(activity.themeType)}
                   </span>
-                  <span className="text-xs text-slate-400">ID: {activity.id}</span>
+                  <span className="text-xs text-purple-500 font-bold">ID: {activity.id}</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <Link
                     href={`/lottery/${activity.id}`}
-                    className="col-span-2 flex items-center justify-center gap-2 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-teal-600 transition-colors"
+                    className="col-span-2 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-sm font-black rounded-2xl hover:from-orange-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     🎯 开始抽奖
                   </Link>
                   <Link
                     href={`/admin/${activity.id}`}
-                    className="flex items-center justify-center gap-2 py-2.5 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-black rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     ⚙️ 管理
                   </Link>
                   <button
                     onClick={() => handleDelete(activity.id)}
-                    className="flex items-center justify-center gap-2 py-2.5 bg-white border border-slate-200 text-rose-500 text-sm font-medium rounded-lg hover:bg-rose-50 hover:border-rose-200 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-rose-400 to-pink-400 text-white text-sm font-black rounded-2xl hover:from-rose-500 hover:to-pink-500 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     🗑️ 删除
                   </button>
@@ -212,44 +212,44 @@ export default function HomePage() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" onClick={() => setShowCreateModal(false)} />
 
-          <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            <div className="px-6 py-6 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-              <h3 className="text-lg font-bold text-slate-800">创建新活动</h3>
+          <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200 border-4 border-white/50">
+            <div className="px-8 py-6 border-b-4 border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 flex justify-between items-center">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">✨ 创建新活动</h3>
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="text-slate-400 hover:text-slate-600 transition-colors"
+                className="text-purple-400 hover:text-purple-600 transition-colors transform hover:scale-110"
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="p-8 space-y-6">
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">活动名称 <span className="text-rose-500">*</span></label>
+                <label className="block text-base font-black text-purple-700 mb-2">🎯 活动名称 <span className="text-rose-500">*</span></label>
                 <input
                   type="text"
                   value={newActivity.name}
                   onChange={(e) => setNewActivity({ ...newActivity, name: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all text-sm outline-none placeholder:text-slate-300"
+                  className="w-full px-5 py-3 bg-white border-4 border-purple-200 rounded-2xl focus:ring-4 focus:ring-purple-300 focus:border-purple-400 transition-all text-sm outline-none placeholder:text-gray-400 font-bold shadow-inner"
                   placeholder="例如：2024 年度盛典抽奖"
                   autoFocus
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">活动描述</label>
+                <label className="block text-base font-black text-purple-700 mb-2">📝 活动描述</label>
                 <textarea
                   value={newActivity.description}
                   onChange={(e) => setNewActivity({ ...newActivity, description: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all text-sm outline-none placeholder:text-slate-300 min-h-[100px]"
+                  className="w-full px-5 py-3 bg-white border-4 border-purple-200 rounded-2xl focus:ring-4 focus:ring-purple-300 focus:border-purple-400 transition-all text-sm outline-none placeholder:text-gray-400 min-h-[100px] font-bold shadow-inner"
                   placeholder="简要描述活动的目的和规则..."
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">视觉主题</label>
+                <label className="block text-base font-black text-purple-700 mb-3">🎨 视觉主题</label>
                 <div className="grid grid-cols-2 gap-4">
-                  <label className={`cursor-pointer border rounded-xl p-4 flex flex-col items-center gap-2 transition-all ${newActivity.themeType === 'wheel' ? 'border-teal-500 bg-teal-50/50 ring-1 ring-teal-500' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}`}>
+                  <label className={`cursor-pointer border-4 rounded-2xl p-5 flex flex-col items-center gap-3 transition-all transform hover:scale-105 ${newActivity.themeType === 'wheel' ? 'border-purple-500 bg-gradient-to-br from-purple-50 to-pink-50 ring-2 ring-purple-400 shadow-lg' : 'border-purple-200 hover:border-purple-300 hover:bg-purple-50'}`}>
                     <input
                       type="radio"
                       name="themeType"
@@ -258,14 +258,14 @@ export default function HomePage() {
                       onChange={(e) => setNewActivity({ ...newActivity, themeType: e.target.value })}
                       className="hidden"
                     />
-                    <span className="text-3xl">🎡</span>
+                    <span className="text-4xl">🎡</span>
                     <div className="text-center">
-                      <div className="text-sm font-bold text-slate-800">经典转盘</div>
-                      <div className="text-xs text-slate-400">Pokemon 风格</div>
+                      <div className="text-base font-black text-purple-800">经典转盘</div>
+                      <div className="text-xs text-purple-600 font-bold">Pokemon 风格</div>
                     </div>
                   </label>
 
-                  <label className={`cursor-pointer border rounded-xl p-4 flex flex-col items-center gap-2 transition-all ${newActivity.themeType === 'sphere' ? 'border-teal-500 bg-teal-50/50 ring-1 ring-teal-500' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}`}>
+                  <label className={`cursor-pointer border-4 rounded-2xl p-5 flex flex-col items-center gap-3 transition-all transform hover:scale-105 ${newActivity.themeType === 'sphere' ? 'border-purple-500 bg-gradient-to-br from-purple-50 to-pink-50 ring-2 ring-purple-400 shadow-lg' : 'border-purple-200 hover:border-purple-300 hover:bg-purple-50'}`}>
                     <input
                       type="radio"
                       name="themeType"
@@ -274,29 +274,29 @@ export default function HomePage() {
                       onChange={(e) => setNewActivity({ ...newActivity, themeType: e.target.value })}
                       className="hidden"
                     />
-                    <span className="text-3xl">🌐</span>
+                    <span className="text-4xl">🌐</span>
                     <div className="text-center">
-                      <div className="text-sm font-bold text-slate-800">赛博球体</div>
-                      <div className="text-xs text-slate-400">黑客帝国风格</div>
+                      <div className="text-base font-black text-purple-800">赛博球体</div>
+                      <div className="text-xs text-purple-600 font-bold">黑客帝国风格</div>
                     </div>
                   </label>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 border-t border-slate-100 bg-slate-50/50 flex gap-3">
+            <div className="p-8 border-t-4 border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 flex gap-4">
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="flex-1 px-4 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 transition-colors"
+                className="flex-1 px-6 py-3.5 bg-white border-4 border-purple-200 text-purple-700 font-black rounded-2xl hover:bg-purple-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                取消
+                ❌ 取消
               </button>
               <button
                 onClick={handleCreate}
                 disabled={!newActivity.name.trim()}
-                className="flex-1 px-4 py-2.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-teal-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-slate-900/10"
+                className="flex-1 px-6 py-3.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-xl hover:shadow-2xl transform hover:scale-105"
               >
-                立即创建
+                🚀 立即创建
               </button>
             </div>
           </div>
